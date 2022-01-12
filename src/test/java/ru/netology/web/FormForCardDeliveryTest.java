@@ -18,8 +18,8 @@ import static com.codeborne.selenide.Selenide.open;
 public class FormForCardDeliveryTest {
 
     @Test
-    public void shouldSendForm() {
-        Configuration.holdBrowserOpen = true;
+    public <gradlew> void shouldSendForm() {
+        Configuration.holdBrowserOpen = true; Configuration.headless = true;
         open("http://localhost:9999");
         $("[data-test-id='city'] input").val("Пермь");
         $("div[class='popup__content'] span").click();
@@ -30,3 +30,6 @@ public class FormForCardDeliveryTest {
         $("[data-test-id='notification']").shouldHave(text("Успешно!"), Duration.ofSeconds(15));
     }
 }
+
+
+
